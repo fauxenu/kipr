@@ -12,6 +12,11 @@ export default {
       return available;
     },
 
+    isFavorite() {
+      const { isFavorite } = this.playerState(this.player.id);
+      return isFavorite;
+    },
+
     actions() {
       return this.playerActions(this.player.id);
     },

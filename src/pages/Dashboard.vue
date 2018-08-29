@@ -6,7 +6,7 @@
         <players-list />
       </div>
       <div class="col-md-4 pl-0">
-        <roster :draft="activeDraft" />
+        <draft-panel :draft="activeDraft" />
       </div>
     </div>
   </div>
@@ -17,13 +17,13 @@ import { createNamespacedHelpers } from 'vuex';
 import { PLAYERS_FETCH, DRAFTS_START } from 'store/action-types';
 import DraftNavBar from 'components/DraftNavBar';
 import PlayersList from 'components/PlayersList';
-import Roster from 'components/Roster';
+import DraftPanel from 'components/DraftPanel';
 
 const { mapActions: playerActions } = createNamespacedHelpers('players');
 const { mapActions: draftActions, mapGetters: draftGetters } = createNamespacedHelpers('drafts');
 
 export default {
-  components: { DraftNavBar, PlayersList, Roster },
+  components: { DraftNavBar, PlayersList, DraftPanel },
   data() {
     return { loading: true };
   },

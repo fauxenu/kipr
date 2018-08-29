@@ -1,5 +1,6 @@
 <template>
   <div class="nameplate" :class="[`nameplate-${type}`]">
+    <i v-if="isFavorite" class="favorite fas fa-star text-warning"></i>
     <img :src="imgPath" class="avatar" alt="player image">
     <div class="info">
       <h6 class="name">{{ name }}</h6>
@@ -25,6 +26,7 @@ export default {
     status: { type: String, default: '' },
     position: { type: String, default: '' },
     showPosition: { type: Boolean, default: false },
+    isFavorite: { type: Boolean, default: false },
   },
   computed: {
     showTeam() {
@@ -45,8 +47,14 @@ export default {
 @import 'variables';
 
 .nameplate {
+  position: relative;
   display: flex;
   align-items: center;
+
+  .favorite {
+    position: absolute;
+    top: -5px;
+  }
 
   .avatar {
     width: 32px;

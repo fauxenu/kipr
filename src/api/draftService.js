@@ -8,6 +8,7 @@ const generateDraft = name => ({
   created: Date.now(),
   roster: [],
   draftedPlayers: [],
+  favorites: [],
   active: true,
 });
 
@@ -79,6 +80,24 @@ export default {
     const draft = drafts.find(item => slug === item.slug);
 
     draft.draftedPlayers = draft.draftedPlayers.filter(id => id !== playerId);
+    storageService.setItem(DRAFT_KEY, drafts);
+    return draft;
+  },
+
+  async addToFavorites(slug, playerId) {
+    const drafts = getDrafts();
+    const draft = drafts.find(item => slug === item.slug);
+
+    draft.favorites = appendUnique(draft.favorites, playerId);
+    storageService.setItem(DRAFT_KEY, drafts);
+    return draft;
+  },
+
+  async removeFromFavorites(slug, playerId) {
+    const drafts = getDrafts();
+    const draft = drafts.find(item => slug === item.slug);
+
+    draft.favorites = draft.favorites.filter(id => id !== playerId);
     storageService.setItem(DRAFT_KEY, drafts);
     return draft;
   },

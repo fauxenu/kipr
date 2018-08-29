@@ -1,5 +1,5 @@
 <template>
-  <div class="roster">
+  <div class="favorites">
     <data-table v-if="!isEmpty" :fields="fields" :items="players">
       <tr slot-scope="{row}">
         <td class="text-uppercase">{{ row.position }}</td>
@@ -12,12 +12,12 @@
         </td>
       </tr>
     </data-table>
-    <p v-else class="text-center text-muted mt-3">Your roster is empty.</p>
+    <p v-else class="text-center text-muted mt-3">You have no favorites.</p>
   </div>
 </template>
 
 <script>
-import { DRAFTS_ROSTER_REMOVE } from 'store/action-types';
+import { DRAFTS_FAVORITES_REMOVE } from 'store/action-types';
 import DataTable from './DataTable';
 import PlayerNameplate from './PlayerNameplate';
 
@@ -43,7 +43,7 @@ export default {
   },
   methods: {
     remove(playerId) {
-      this.$emit('remove', playerId, DRAFTS_ROSTER_REMOVE);
+      this.$emit('remove', playerId, DRAFTS_FAVORITES_REMOVE);
     },
   },
 };
