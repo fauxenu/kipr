@@ -80,7 +80,7 @@ export default {
 
   &-enter,
   &-leave-to {
-    opacity: 0;;
+    opacity: 0;
   }
 }
 </style>

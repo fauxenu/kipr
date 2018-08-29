@@ -2,7 +2,7 @@
   <div class="navbar fixed-top navbar-light bg-light">
     <router-link to="/" class="navbar-brand">
       <i class="logo fas fa-football-ball"></i>
-      <span class="ml-1">Kiper</span>
+      <span class="ml-1">Kipr</span>
     </router-link>
     <player-search class="form-inline" />
   </div>
