@@ -1,0 +1,7 @@
+.DS_Store
+.vscode
+node_modules
+dist/
+data/
+assets/img/players
+assets/img/teams

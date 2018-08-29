@@ -1,0 +1,29 @@
+{
+  "positionRanks": [
+    {
+      "position": "qb",
+      "url": "http://www.espn.com/fantasy/football/story/_/page/18ranksWeek0QBPPR/fantasy-football-preseason-quarterback-rankings-2018"
+    },
+    {
+      "position": "rb",
+      "url": "http://www.espn.com/fantasy/football/story/_/page/18ranksWeek0RBPPR/fantasy-football-composite-running-back-ppr-rankings-2018"
+    },
+    {
+      "position": "wr",
+      "url": "http://www.espn.com/fantasy/football/story/_/page/18ranksWeek0WRPPR/fantasy-football-preseason-wide-receiver-ppr-rankings-2018"
+    },
+    {
+      "position": "te",
+      "url": "http://www.espn.com/fantasy/football/story/_/page/18ranksWeek0TEPPR/fantasy-football-preseason-tight-end-ppr-rankings-2018"
+    },
+    {
+      "position": "k",
+      "url": "http://www.espn.com/fantasy/football/story/_/page/18ranksWeek0KPPR/fantasy-football-preseason-kicker-rankings-2018"
+    },
+    {
+      "position": "d/st",
+      "url": "http://www.espn.com/fantasy/football/story/_/page/18ranksWeek0DSTPPR/fantasy-football-preseason-dst-rankings-2018"
+    }
+  ],
+  "overallRanks": "http://www.espn.com/fantasy/football/story/_/page/18RanksPreseason300PPR/2018-fantasy-football-ppr-rankings-top-300"
+}
