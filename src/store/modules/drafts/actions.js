@@ -15,6 +15,8 @@ import {
   DRAFTS_PLAYERS_REMOVE,
   DRAFTS_ROSTER_ADD,
   DRAFTS_ROSTER_REMOVE,
+  DRAFTS_FAVORITES_ADD,
+  DRAFTS_FAVORITES_REMOVE,
 } from 'store/action-types';
 
 const managePlayer = async (commit, method, slug, playerId) => {
@@ -67,5 +69,13 @@ export default {
 
   async [DRAFTS_ROSTER_REMOVE]({ commit }, { slug, playerId }) {
     return managePlayer(commit, 'removeFromRoster', slug, playerId);
+  },
+
+  async [DRAFTS_FAVORITES_ADD]({ commit }, { slug, playerId }) {
+    return managePlayer(commit, 'addToFavorites', slug, playerId);
+  },
+
+  async [DRAFTS_FAVORITES_REMOVE]({ commit }, { slug, playerId }) {
+    return managePlayer(commit, 'removeFromFavorites', slug, playerId);
   },
 };
