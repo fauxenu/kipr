@@ -2,7 +2,7 @@
   <tr v-if="!hidden" :class="{ 'table-warning': !isAvailable }">
     <td>{{ rank }}</td>
     <td>
-      <player-nameplate v-bind="player" :is-favorite="isFavorite" />
+      <player-nameplate v-bind="player" :is-favorite="isFavorite" show-link />
     </td>
     <td class="text-uppercase">{{ player.position }}</td>
     <td>{{ player.bye }}</td>

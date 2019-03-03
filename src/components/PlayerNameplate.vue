@@ -3,7 +3,12 @@
     <i v-if="isFavorite" class="favorite fas fa-star text-warning"></i>
     <img :src="imgPath" class="avatar" alt="player image">
     <div class="info">
-      <h6 class="name">{{ name }}</h6>
+      <h6 class="name">
+        {{ name }}
+        <a v-if="showLink && href" :href="href" target="_blank" class="small">
+          <i class="fas fa-external-link-alt"></i>
+        </a>
+      </h6>
       <div class="meta">
         <span v-if="showPosition" class="position text-uppercase">{{ position }} -</span>
         <span v-if="showTeam" class="team">{{ team | team-name }}</span>
@@ -25,7 +30,9 @@ export default {
     team: { type: String, required: true },
     status: { type: String, default: '' },
     position: { type: String, default: '' },
+    href: { type: String, default: '' },
     showPosition: { type: Boolean, default: false },
+    showLink: { type: Boolean, default: false },
     isFavorite: { type: Boolean, default: false },
   },
   computed: {
