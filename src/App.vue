@@ -6,14 +6,6 @@
   </div>
 </template>
 
-<script>
-import Dashboard from 'pages/Dashboard';
-
-export default {
-  components: { Dashboard },
-};
-</script>
-
 <style lang="scss" scoped>
 .fade {
   &-enter-active,

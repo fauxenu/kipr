@@ -22,7 +22,7 @@ const config = {
   output: {
     path: dist,
     publicPath: '/',
-    filename: `[name].${isProd ? '[chunkhash].min.js' : 'js'}`,
+    filename: `[name].${isProd ? '[hash].min.js' : 'js'}`,
     pathinfo: !isProd,
   },
   module: {
@@ -57,7 +57,7 @@ const config = {
         test: /\.css$/,
         use: [
           isProd ? MiniCssExtractPlugin.loader : 'style-loader',
-          { loader: 'css-loader', options: { root: __dirname, sourceMap: true, importLoaders: 1 } },
+          { loader: 'css-loader', options: { sourceMap: true, importLoaders: 1 } },
         ],
       },
 
@@ -66,7 +66,7 @@ const config = {
         test: /\.scss$/,
         use: [
           isProd ? MiniCssExtractPlugin.loader : 'vue-style-loader',
-          { loader: 'css-loader', options: { root: __dirname, sourceMap: true, importLoaders: 1 } },
+          { loader: 'css-loader', options: { sourceMap: true, importLoaders: 1 } },
           {
             loader: 'sass-loader',
           },
