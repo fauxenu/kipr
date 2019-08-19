@@ -1,0 +1,47 @@
+type Player {
+  id: ID!,
+  type: String!,
+  position: String!,
+  name: String!,
+  externalId: String,
+  teamCode: String,
+  rank: Float,
+  overallRank: Float,
+  byeWeek: Int,
+  status: String,
+  externalUrl: String
+}
+
+input PlayerInput {
+  id: ID,
+  type: String!,
+  position: String!,
+  name: String!,
+  externalId: String,
+  teamCode: String,
+  rank: Float,
+  overallRank: Float,
+  byeWeek: Int,
+  status: String,
+  externalUrl: String
+}
+
+type PlayerImportResult {
+  insertedCount: Int,
+  matchedCount: Int,
+  modifiedCount: Int,
+  deletedCount: Int,
+  upsertedCount: Int
+}
+
+type Query {
+  player(id: ID, externalId: String) :Player,
+  players(name: String, position: String): [Player]
+}
+
+type Mutation {
+  addPlayer(input: PlayerInput!): Player,
+  editPlayer(input: PlayerInput!): Player,
+  deletePlayer(id: ID!): Player,
+  importPlayers(input: [PlayerInput]): PlayerImportResult
+}

@@ -1,0 +1,39 @@
+type Team {
+  id: ID!,
+  name: String!,
+  logo: String,
+  introTheme: String,
+  owner: User,
+  players: [Player]
+  favoritePlayers: [Player],
+  league: League,
+  draft: Draft
+}
+
+input CreateTeamInput {
+  name: String!,
+  logo: String
+  introTheme: String
+}
+
+input EditTeamInput {
+  id: ID!,
+  name: String!,
+  logo: String,
+  introTheme: String
+}
+
+type Query {
+  team(id: ID): Team,
+  teams(ownerId: ID, name: String): [Team]
+}
+
+type Mutation {
+  addTeam(input: CreateTeamInput!): Team,
+  editTeam(input: EditTeamInput!): Team,
+  deleteTeam(id: ID!): Team,
+  addTeamPlayer(id: ID!, playerId: ID!): Team
+  removeTeamPlayer(id: ID!, playerId: ID!): Team,
+  likePlayer(id: ID!, playerId: ID!): Team,
+  unlikePlayer(id: ID!, playerId: ID!): Team
+}

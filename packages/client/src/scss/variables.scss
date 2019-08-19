@@ -1,0 +1,20 @@
+$teal:    #20c997 !default;
+$purple:  #6f42c1 !default;
+$pink:    #e83e8c !default;
+
+// bootstrap overrides
+$theme-colors: (
+  "primary": $purple,
+  "danger": $pink,
+  "success": $teal
+);
+
+@import '@bootstrap/scss/_functions';
+@import '@bootstrap/scss/_variables';
+@import '@bootstrap/scss/_mixins';
+
+// new variables
+$font-size-xs: ($font-size-base * .7) !default;
+
+// z-index
+$z-index-top: 2000;

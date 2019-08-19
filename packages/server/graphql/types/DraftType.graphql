@@ -1,0 +1,75 @@
+type PositionLimits {
+  quarterBack: Int!,
+  runningBack: Int!,
+  wideReciever: Int!,
+  tightEnd: Int!,
+  defense: Int!,
+  kicker: Int!,
+  headCoach: Int!
+}
+
+input PositionLimitsInput {
+  quarterBack: Int!,
+  runningBack: Int!,
+  wideReciever: Int!,
+  tightEnd: Int!,
+  defense: Int!,
+  kicker: Int!,
+  headCoach: Int!
+}
+
+type Draft {
+  id: ID!,
+  positionLimits: PositionLimits,
+  league: League,
+  teams: [Team],
+  skippedTeams: [Team],
+  transactions: [DraftTransaction],
+  draftedPlayers: [Player],
+  currentRound: Int,
+  currentTurn: Int,
+  turnStart: String,
+  turnEnd: String,
+  pausedAt: String,
+  secondsPerTurn: Int,
+  secondsLeftInTurn: Int,
+  status: String,
+  type: String
+}
+
+input CreateDraftInput {
+  positionLimits: PositionLimitsInput!,
+  leagueId: ID,
+  type: String,
+  secondsPerTurn: Int
+}
+
+input EditDraftInput {
+  id: ID!,
+  positionLimits: PositionLimitsInput,
+  secondsPerTurn: Int
+}
+
+input DraftPlayerInput {
+  id: ID!,
+  teamId: ID!,
+  playerId: ID!
+}
+
+input UndraftPlayerInput {
+  id: ID!,
+  transactionId: ID!
+}
+
+type Query {
+  draft(id: ID): Draft,
+  drafts(leagueId: ID, ownerId: ID, teamId: ID): [Draft]
+}
+
+type Mutation {
+  addDraft(input: CreateDraftInput!): Draft,
+  editDraft(input: EditDraftInput!): Draft,
+  deleteDraft(id: ID!): Draft,
+  draftPlayer(input: DraftPlayerInput): DraftTransaction
+  undraftPlayer(input: UndraftPlayerInput): DraftTransaction
+}

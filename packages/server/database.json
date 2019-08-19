@@ -1,0 +1,8 @@
+{
+  "development": {
+    "driver": "mongodb",
+    "database": "kipr-server",
+    "host": "localhost",
+    "port": 27017
+  }
+}

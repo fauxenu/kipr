@@ -1,0 +1,44 @@
+{
+  "name": "@kipr/server",
+  "version": "0.0.1",
+  "description": "Live Draft Server",
+  "private": false,
+  "main": "index.js",
+  "engines": {
+    "node": ">= 10"
+  },
+  "scripts": {
+    "eslint": "eslint . --ext=js",
+    "start": "nodemon --exec babel-node index.js"
+  },
+  "author": "bhilmer@gmail.com",
+  "license": "MIT",
+  "dependencies": {
+    "@babel/cli": "^7.5.5",
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "bcrypt": "^3.0.6",
+    "body-parser": "^1.18.3",
+    "concurrently": "^4.1.1",
+    "cors": "^2.8.5",
+    "dotenv-safe": "^6.1.0",
+    "express": "^4.17.1",
+    "express-graphql": "^0.9.0",
+    "express-jwt": "^5.3.1",
+    "graphql": "^14.4.2",
+    "graphql-tag-pluck": "^0.8.3",
+    "graphql-tools": "^4.0.5",
+    "jsonwebtoken": "^8.5.1",
+    "merge-graphql-schemas": "^1.7.0",
+    "migrate-mongoose": "^4.0.0",
+    "mongoose": "^5.6.7",
+    "nodemon": "^1.19.1"
+  },
+  "devDependencies": {
+    "@babel/node": "^7.5.5",
+    "eslint": "^5.3.0",
+    "eslint-config-airbnb-base": "^13.2.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-node": "^9.0.1"
+  }
+}

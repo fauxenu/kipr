@@ -1,0 +1,66 @@
+type User {
+  id: ID!
+  email: String!
+  firstName: String
+  lastName: String
+  avatar: String
+  role: String
+}
+
+input SignUpUserInput {
+  email: String!,
+  password: String!,
+  firstName: String!,
+  lastName: String!
+}
+
+input AddUserInput {
+  email: String!,
+  password: String!,
+  firstName: String!,
+  lastName: String!,
+  avatar: String
+  role: String
+}
+
+input EditUserInput {
+  id: String!,
+  firstName: String!,
+  lastName: String!,
+  avatar: String!,
+  role: String!
+}
+
+input EditUserProfileInput {
+  id: String!,
+  firstName: String!,
+  lastName: String!,
+  avatar: String!
+}
+
+input ChangeUserPasswordInput {
+  id: String!,
+  oldPassword: String!,
+  newPassword: String!
+}
+
+type RegisteredUser {
+  user: User,
+  token: String
+}
+
+type Query {
+  current: User
+  user(id: ID, email: String): User
+  users: [User]
+}
+
+type Mutation {
+  addUser(input: AddUserInput!): User,
+  editUser(input: EditUserInput!): User,
+  editUserProfile(input: EditUserProfileInput!): User,
+  changePassword(input: ChangeUserPasswordInput!): User,
+  deleteUser(id: ID!): User,
+  signup(input: SignUpUserInput!): RegisteredUser,
+  login(email: String!, password: String!): RegisteredUser
+}

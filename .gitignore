@@ -1,7 +1,8 @@
 .DS_Store
 .vscode
+.env
 node_modules
 dist/
 data/
-assets/img/players
-assets/img/teams
+**/assets/img/players
+**/assets/img/teams

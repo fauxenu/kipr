@@ -1,0 +1,10 @@
+type DraftTransaction {
+  id: ID!,
+  team: Team,
+  player: Player
+}
+
+type Query {
+  draftTransaction(id: ID!): DraftTransaction,
+  draftTransactions(draftId: ID, teamId: ID): [DraftTransaction]
+}
